@@ -40,7 +40,7 @@ def test_capitalize_negative(input_str, expected):
     ("  цветение вишни", "цветение вишни"),
     ("   сакура  ", "сакура  "),
     ("  123", "123"),
-    (" !Сакура!", "!Сакура"),
+    (" !Сакура!", "!Сакура!"),
     (" сакура2025", "сакура2025")
 ])
 def test_trim_positive(input_str, expected):
@@ -79,7 +79,7 @@ def test_contains_positive(input_str, symbol, expected):
 @pytest.mark.parametrize("input_str, symbol, expected", [
     ("SkyPro", "U", False),
     ("", "a", False),
-    ("сакура", "", False),
+    ("сакура", " ", False),
     ("сакура", "Щ", False),  # Проверка регистрозависимости
     ("123", "4", False)
 ])
