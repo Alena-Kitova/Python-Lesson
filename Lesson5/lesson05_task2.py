@@ -10,8 +10,9 @@ driver = webdriver.Chrome(
 driver.get("http://uitestingplayground.com/dynamicid")
 sleep(5)
 
-driver.find_element(By.LINK_TEXT, "Button with Dynamic ID").click()
+blue_button = driver.find_element(By.CSS_SELECTOR, "button.btn-primary")
+blue_button.click()
 
-sleep(5)
+sleep(10)
 
 driver.quit()
