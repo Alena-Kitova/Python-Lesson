@@ -26,16 +26,13 @@ class ShopPage:
 
     def add_to_cart(self):
 
-        backpack = (self.driver.find_element
-                    (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack"))
-        backpack.click()
+        self.wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack"))).click()
 
-        tshirt = (self.driver.find_element
-                  (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt"))
-        tshirt.click()
-        onesie = (self.driver.find_element
-                  (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie"))
-        onesie.click()
+        self.wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt"))).click()
+        self.wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie"))).click()
 
     def cart(self):
 

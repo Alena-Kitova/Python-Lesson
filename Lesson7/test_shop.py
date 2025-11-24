@@ -11,7 +11,7 @@ def driver():
     driver.quit()
 
 
-def test_calculator(driver):
+def test_shopping(driver):
     shop_page = ShopPage(driver)
     shop_page.open()
     shop_page.authorization()
@@ -19,7 +19,6 @@ def test_calculator(driver):
     shop_page.cart()
     shop_page.checkout_cart()
     shop_page.checkout_page()
-    shop_page.get_total_price()
 
     total = shop_page.get_total_price()
     expected_total = 58.29
